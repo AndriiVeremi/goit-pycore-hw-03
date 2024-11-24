@@ -23,3 +23,22 @@ lottery_numbers = get_numbers_ticket(1, 49, 6)
 #lottery_numbers = get_numbers_ticket(0, 49, 6)
 print("Ваші лотерейні числа:", lottery_numbers)
 
+
+#--------------------------------------------------------------------
+
+
+def get_numbers_ticket2(min, max, quantity):
+        
+    if not (1 <= min <= 1000 and 1 <= max <= 1000):
+        return "Помилка: min і max повинні бути між 1 та 1000."
+    
+    if quantity > (max - min + 1):
+        return "Помилка: quantity перевищує кількість можливих чисел у заданому діапазоні."    
+        
+    return random.sample(range(min, max + 1), quantity)
+
+
+lottery_numbers = get_numbers_ticket2(1, 49, 6)
+#lottery_numbers = get_numbers_ticket2(1, 49, 600)
+#lottery_numbers = get_numbers_ticket2(0, 49, 6)
+print("Ваші лотерейні числа:", lottery_numbers)
